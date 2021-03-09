@@ -7,15 +7,16 @@ import torchvision
 
 from network_files.image_list import ImageList
 
+
 class GeneralizedRCNNTransform(nn.Module):
     def __init__(self, min_size, max_size, image_mean, image_std):
         super(GeneralizedRCNNTransform, self).__init__()
         if not isinstance(min_size, (list, tuple)):
             min_size = (min_size,)
-        self.min_size = min_size        # 最小边
-        self.max_size = max_size        # 最大边
-        self.image_mean = image_mean    # 均值
-        self.image_std = image_std      # 方差
+        self.min_size = min_size  # 最小边
+        self.max_size = max_size  # 最大边
+        self.image_mean = image_mean  # 均值
+        self.image_std = image_std  # 方差
 
     def normalize(self, image):
         dtype, device = image.dtype, image.device

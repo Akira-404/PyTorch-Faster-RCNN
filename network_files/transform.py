@@ -7,7 +7,6 @@ import torchvision
 
 from network_files.image_list import ImageList
 
-
 class GeneralizedRCNNTransform(nn.Module):
     def __init__(self, min_size, max_size, image_mean, image_std):
         super(GeneralizedRCNNTransform, self).__init__()
